@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+.result {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.result.red {
+    background-color: #f8d7da;
+}
+
+.result.amber {
+    background-color: #fff3cd;
+}
+
+.result.green {
+    background-color: #d4edda;
+}

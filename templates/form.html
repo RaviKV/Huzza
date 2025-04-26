@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Privacy Scanner</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Scan Your Privacy & Security Settings</h1>
+        <form method="post" action="/scan">
+            <label for="platform">Platform:</label>
+            <select name="platform" required>
+                <option value="facebook">Facebook</option>
+                <option value="instagram">Instagram</option>
+            </select>
+
+            <label for="username">Username/Email:</label>
+            <input type="text" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" required>
+
+            <button type="submit">Scan Now</button>
+        </form>
+
+        {% if result %}
+            <div class="result {{ result.color|lower }}">
+                <h2>Analysis Result</h2>
+                <p><strong>Score:</strong> {{ result.score }}/10</p>
+                <p><strong>Color:</strong> {{ result.color }}</p>
+                <p><strong>Analysis:</strong> {{ result.analysis }}</p>
+                <h3>Recommendations:</h3>
+                <ul>
+                    {% for rec in result.recommendations %}
+                        <li>{{ rec }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
